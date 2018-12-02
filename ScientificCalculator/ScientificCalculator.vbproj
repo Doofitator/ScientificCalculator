@@ -123,6 +123,18 @@
     <EmbeddedResource Include="frm_Calculator.resx">
       <DependentUpon>frm_Calculator.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_F2C.resx">
+      <DependentUpon>frm_F2C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ohms.resx">
+      <DependentUpon>frm_Ohms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_quadratics.resx">
+      <DependentUpon>frm_quadratics.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_std.resx">
+      <DependentUpon>frm_std.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
