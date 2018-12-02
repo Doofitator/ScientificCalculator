@@ -12,5 +12,4 @@
     Private Sub nud_far_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles nud_far.KeyDown
         If e.KeyCode = Keys.Enter Then nud_cel.Value = Math.Round(((nud_far.Value + 32) / 5) * 9, 5)
     End Sub
-
 End Class
