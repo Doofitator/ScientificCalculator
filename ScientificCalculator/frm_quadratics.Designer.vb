@@ -24,19 +24,22 @@ Partial Class frm_quadratics
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txt_x1 = New System.Windows.Forms.TextBox()
+        Me.txt_x2 = New System.Windows.Forms.TextBox()
+        Me.nud_a = New System.Windows.Forms.NumericUpDown()
+        Me.nud_b = New System.Windows.Forms.NumericUpDown()
+        Me.nud_c = New System.Windows.Forms.NumericUpDown()
+        CType(Me.nud_a, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nud_b, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nud_c, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 39)
+        Me.Label1.Location = New System.Drawing.Point(96, 39)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 24)
         Me.Label1.TabIndex = 0
@@ -46,78 +49,84 @@ Partial Class frm_quadratics
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(206, 39)
+        Me.Label2.Location = New System.Drawing.Point(239, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 24)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "x +"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(24, 36)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(52, 29)
-        Me.TextBox1.TabIndex = 2
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(148, 36)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(52, 29)
-        Me.TextBox2.TabIndex = 3
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(248, 36)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(52, 29)
-        Me.TextBox3.TabIndex = 4
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(20, 96)
+        Me.Label3.Location = New System.Drawing.Point(15, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 24)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "x ="
         '
-        'TextBox4
+        'txt_x1
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(62, 93)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(238, 29)
-        Me.TextBox4.TabIndex = 6
+        Me.txt_x1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_x1.Location = New System.Drawing.Point(62, 93)
+        Me.txt_x1.Name = "txt_x1"
+        Me.txt_x1.Size = New System.Drawing.Size(290, 29)
+        Me.txt_x1.TabIndex = 6
         '
-        'TextBox5
+        'txt_x2
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(62, 128)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(238, 29)
-        Me.TextBox5.TabIndex = 7
+        Me.txt_x2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_x2.Location = New System.Drawing.Point(62, 128)
+        Me.txt_x2.Name = "txt_x2"
+        Me.txt_x2.Size = New System.Drawing.Size(290, 29)
+        Me.txt_x2.TabIndex = 7
+        '
+        'nud_a
+        '
+        Me.nud_a.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nud_a.Location = New System.Drawing.Point(19, 37)
+        Me.nud_a.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
+        Me.nud_a.Name = "nud_a"
+        Me.nud_a.Size = New System.Drawing.Size(71, 29)
+        Me.nud_a.TabIndex = 8
+        '
+        'nud_b
+        '
+        Me.nud_b.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nud_b.Location = New System.Drawing.Point(162, 37)
+        Me.nud_b.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
+        Me.nud_b.Name = "nud_b"
+        Me.nud_b.Size = New System.Drawing.Size(71, 29)
+        Me.nud_b.TabIndex = 9
+        '
+        'nud_c
+        '
+        Me.nud_c.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nud_c.Location = New System.Drawing.Point(281, 37)
+        Me.nud_c.Minimum = New Decimal(New Integer() {100, 0, 0, -2147483648})
+        Me.nud_c.Name = "nud_c"
+        Me.nud_c.Size = New System.Drawing.Size(71, 29)
+        Me.nud_c.TabIndex = 10
         '
         'frm_quadratics
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(325, 183)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
+        Me.ClientSize = New System.Drawing.Size(371, 183)
+        Me.Controls.Add(Me.nud_c)
+        Me.Controls.Add(Me.nud_b)
+        Me.Controls.Add(Me.nud_a)
+        Me.Controls.Add(Me.txt_x2)
+        Me.Controls.Add(Me.txt_x1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frm_quadratics"
         Me.Text = "Quadratic solver"
+        CType(Me.nud_a, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nud_b, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nud_c, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -125,10 +134,10 @@ Partial Class frm_quadratics
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txt_x1 As TextBox
+    Friend WithEvents txt_x2 As TextBox
+    Friend WithEvents nud_a As NumericUpDown
+    Friend WithEvents nud_b As NumericUpDown
+    Friend WithEvents nud_c As NumericUpDown
 End Class
