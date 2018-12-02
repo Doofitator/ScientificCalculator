@@ -25,7 +25,10 @@ Partial Class frm_Calculator
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Calculator))
         Me.txt_formula = New System.Windows.Forms.TextBox()
         Me.txt_result = New System.Windows.Forms.TextBox()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.stp_menuBar = New System.Windows.Forms.ToolStrip()
+        Me.tssddbtn_file = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.tsmi_history = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmi_exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsddbtn_advanced = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tsmi_Quadratic = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmi_F2C = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,10 +63,7 @@ Partial Class frm_Calculator
         Me.Button27 = New System.Windows.Forms.Button()
         Me.Button28 = New System.Windows.Forms.Button()
         Me.Button29 = New System.Windows.Forms.Button()
-        Me.tssddbtn_file = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.tsmi_history = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmi_exit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStrip1.SuspendLayout()
+        Me.stp_menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_formula
@@ -90,14 +90,38 @@ Partial Class frm_Calculator
         Me.txt_result.Text = "00"
         Me.txt_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'ToolStrip1
+        'stp_menuBar
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssddbtn_file, Me.tsddbtn_advanced})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(435, 25)
-        Me.ToolStrip1.TabIndex = 3
-        Me.ToolStrip1.Text = "ToolStrip1"
+        Me.stp_menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssddbtn_file, Me.tsddbtn_advanced})
+        Me.stp_menuBar.Location = New System.Drawing.Point(0, 0)
+        Me.stp_menuBar.Name = "stp_menuBar"
+        Me.stp_menuBar.Size = New System.Drawing.Size(435, 25)
+        Me.stp_menuBar.TabIndex = 3
+        Me.stp_menuBar.Text = "Menu bar"
+        '
+        'tssddbtn_file
+        '
+        Me.tssddbtn_file.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.tssddbtn_file.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_history, Me.tsmi_exit})
+        Me.tssddbtn_file.Image = CType(resources.GetObject("tssddbtn_file.Image"), System.Drawing.Image)
+        Me.tssddbtn_file.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tssddbtn_file.Name = "tssddbtn_file"
+        Me.tssddbtn_file.Size = New System.Drawing.Size(38, 22)
+        Me.tssddbtn_file.Text = "File"
+        '
+        'tsmi_history
+        '
+        Me.tsmi_history.Name = "tsmi_history"
+        Me.tsmi_history.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.tsmi_history.Size = New System.Drawing.Size(187, 22)
+        Me.tsmi_history.Text = "Open History"
+        '
+        'tsmi_exit
+        '
+        Me.tsmi_exit.Name = "tsmi_exit"
+        Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
+        Me.tsmi_exit.Size = New System.Drawing.Size(187, 22)
+        Me.tsmi_exit.Text = "Exit"
         '
         'tsddbtn_advanced
         '
@@ -410,30 +434,6 @@ Partial Class frm_Calculator
         Me.Button29.Text = "AC"
         Me.Button29.UseVisualStyleBackColor = True
         '
-        'tssddbtn_file
-        '
-        Me.tssddbtn_file.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.tssddbtn_file.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_history, Me.tsmi_exit})
-        Me.tssddbtn_file.Image = CType(resources.GetObject("tssddbtn_file.Image"), System.Drawing.Image)
-        Me.tssddbtn_file.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tssddbtn_file.Name = "tssddbtn_file"
-        Me.tssddbtn_file.Size = New System.Drawing.Size(38, 22)
-        Me.tssddbtn_file.Text = "File"
-        '
-        'tsmi_history
-        '
-        Me.tsmi_history.Name = "tsmi_history"
-        Me.tsmi_history.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.tsmi_history.Size = New System.Drawing.Size(187, 22)
-        Me.tsmi_history.Text = "Open History"
-        '
-        'tsmi_exit
-        '
-        Me.tsmi_exit.Name = "tsmi_exit"
-        Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
-        Me.tsmi_exit.Size = New System.Drawing.Size(187, 22)
-        Me.tsmi_exit.Text = "Exit"
-        '
         'frm_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -468,15 +468,15 @@ Partial Class frm_Calculator
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.stp_menuBar)
         Me.Controls.Add(Me.txt_result)
         Me.Controls.Add(Me.txt_formula)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "frm_Calculator"
         Me.Text = "Calculator"
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.stp_menuBar.ResumeLayout(False)
+        Me.stp_menuBar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -484,7 +484,7 @@ Partial Class frm_Calculator
 
     Friend WithEvents txt_formula As TextBox
     Friend WithEvents txt_result As TextBox
-    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents stp_menuBar As ToolStrip
     Friend WithEvents tssddbtn_file As ToolStripDropDownButton
     Friend WithEvents tsmi_history As ToolStripMenuItem
     Friend WithEvents tsddbtn_advanced As ToolStripDropDownButton
