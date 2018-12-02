@@ -27,6 +27,9 @@ Partial Class frm_Calculator
         Me.stp_menuBar = New System.Windows.Forms.ToolStrip()
         Me.tssddbtn_file = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tsmi_history = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmi_openHistory = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmi_saveHistory = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmi_deleteHistory = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmi_exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsddbtn_advanced = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tsmi_Quadratic = New System.Windows.Forms.ToolStripMenuItem()
@@ -99,16 +102,37 @@ Partial Class frm_Calculator
         '
         'tsmi_history
         '
+        Me.tsmi_history.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_openHistory, Me.tsmi_saveHistory, Me.tsmi_deleteHistory})
         Me.tsmi_history.Name = "tsmi_history"
-        Me.tsmi_history.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.tsmi_history.Size = New System.Drawing.Size(187, 22)
-        Me.tsmi_history.Text = "Open History"
+        Me.tsmi_history.Size = New System.Drawing.Size(140, 22)
+        Me.tsmi_history.Text = "History"
+        '
+        'tsmi_openHistory
+        '
+        Me.tsmi_openHistory.Name = "tsmi_openHistory"
+        Me.tsmi_openHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.tsmi_openHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_openHistory.Text = "Open"
+        '
+        'tsmi_saveHistory
+        '
+        Me.tsmi_saveHistory.Name = "tsmi_saveHistory"
+        Me.tsmi_saveHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.tsmi_saveHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_saveHistory.Text = "Save as Text"
+        '
+        'tsmi_deleteHistory
+        '
+        Me.tsmi_deleteHistory.Name = "tsmi_deleteHistory"
+        Me.tsmi_deleteHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_deleteHistory.Text = "Delete"
         '
         'tsmi_exit
         '
         Me.tsmi_exit.Name = "tsmi_exit"
         Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
-        Me.tsmi_exit.Size = New System.Drawing.Size(187, 22)
+        Me.tsmi_exit.Size = New System.Drawing.Size(140, 22)
         Me.tsmi_exit.Text = "Exit"
         '
         'tsddbtn_advanced
@@ -519,4 +543,7 @@ Partial Class frm_Calculator
     Friend WithEvents btn_clear As Button
     Friend WithEvents tsmi_exit As ToolStripMenuItem
     Friend WithEvents Label1 As Label
+    Friend WithEvents tsmi_openHistory As ToolStripMenuItem
+    Friend WithEvents tsmi_saveHistory As ToolStripMenuItem
+    Friend WithEvents tsmi_deleteHistory As ToolStripMenuItem
 End Class

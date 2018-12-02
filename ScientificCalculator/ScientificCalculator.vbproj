@@ -72,11 +72,35 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frm_Calculator.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frm_Calculator.Designer.vb">
+      <DependentUpon>frm_Calculator.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_F2C.Designer.vb">
+      <DependentUpon>frm_F2C.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_F2C.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ohms.Designer.vb">
+      <DependentUpon>frm_Ohms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Ohms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_quadratics.Designer.vb">
+      <DependentUpon>frm_quadratics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_quadratics.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_std.Designer.vb">
+      <DependentUpon>frm_std.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_std.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,8 +120,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="frm_Calculator.resx">
+      <DependentUpon>frm_Calculator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
