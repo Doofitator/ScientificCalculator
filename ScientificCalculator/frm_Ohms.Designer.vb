@@ -22,7 +22,7 @@ Partial Class frm_Ohms
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.bl_i = New System.Windows.Forms.Label()
+        Me.lbl_i = New System.Windows.Forms.Label()
         Me.lbl_v = New System.Windows.Forms.Label()
         Me.nud_i = New System.Windows.Forms.NumericUpDown()
         Me.nud_v = New System.Windows.Forms.NumericUpDown()
@@ -34,15 +34,15 @@ Partial Class frm_Ohms
         CType(Me.nud_r, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'bl_i
+        'lbl_i
         '
-        Me.bl_i.AutoSize = True
-        Me.bl_i.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bl_i.Location = New System.Drawing.Point(41, 45)
-        Me.bl_i.Name = "bl_i"
-        Me.bl_i.Size = New System.Drawing.Size(72, 24)
-        Me.bl_i.TabIndex = 7
-        Me.bl_i.Text = "Current"
+        Me.lbl_i.AutoSize = True
+        Me.lbl_i.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_i.Location = New System.Drawing.Point(41, 45)
+        Me.lbl_i.Name = "lbl_i"
+        Me.lbl_i.Size = New System.Drawing.Size(72, 24)
+        Me.lbl_i.TabIndex = 7
+        Me.lbl_i.Text = "Current"
         '
         'lbl_v
         '
@@ -111,7 +111,7 @@ Partial Class frm_Ohms
         Me.Controls.Add(Me.lbl_hint)
         Me.Controls.Add(Me.lbl_r)
         Me.Controls.Add(Me.nud_r)
-        Me.Controls.Add(Me.bl_i)
+        Me.Controls.Add(Me.lbl_i)
         Me.Controls.Add(Me.lbl_v)
         Me.Controls.Add(Me.nud_i)
         Me.Controls.Add(Me.nud_v)
@@ -127,7 +127,7 @@ Partial Class frm_Ohms
 
     End Sub
 
-    Friend WithEvents bl_i As Label
+    Friend WithEvents lbl_i As Label
     Friend WithEvents lbl_v As Label
     Friend WithEvents nud_i As NumericUpDown
     Friend WithEvents nud_v As NumericUpDown
