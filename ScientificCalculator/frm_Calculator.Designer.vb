@@ -65,8 +65,9 @@ Partial Class frm_Calculator
         Me.btn_inverseTan = New System.Windows.Forms.Button()
         Me.btn_backspace = New System.Windows.Forms.Button()
         Me.btn_clear = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_formula = New System.Windows.Forms.Label()
         Me.sfd_History = New System.Windows.Forms.SaveFileDialog()
+        Me.btn_point = New System.Windows.Forms.Button()
         Me.stp_menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -78,8 +79,7 @@ Partial Class frm_Calculator
         Me.txt_result.Multiline = True
         Me.txt_result.Name = "txt_result"
         Me.txt_result.Size = New System.Drawing.Size(411, 46)
-        Me.txt_result.TabIndex = 29
-        Me.txt_result.Text = "00"
+        Me.txt_result.TabIndex = 30
         Me.txt_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'stp_menuBar
@@ -105,35 +105,35 @@ Partial Class frm_Calculator
         '
         Me.tsmi_history.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_openHistory, Me.tsmi_saveHistory, Me.tsmi_deleteHistory})
         Me.tsmi_history.Name = "tsmi_history"
-        Me.tsmi_history.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_history.Size = New System.Drawing.Size(140, 22)
         Me.tsmi_history.Text = "History"
         '
         'tsmi_openHistory
         '
         Me.tsmi_openHistory.Name = "tsmi_openHistory"
         Me.tsmi_openHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.tsmi_openHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_openHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_openHistory.Text = "Open"
         '
         'tsmi_saveHistory
         '
         Me.tsmi_saveHistory.Name = "tsmi_saveHistory"
         Me.tsmi_saveHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.tsmi_saveHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_saveHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_saveHistory.Text = "Save as Text"
         '
         'tsmi_deleteHistory
         '
         Me.tsmi_deleteHistory.Name = "tsmi_deleteHistory"
         Me.tsmi_deleteHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_deleteHistory.Text = "Delete"
         '
         'tsmi_exit
         '
         Me.tsmi_exit.Name = "tsmi_exit"
         Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
-        Me.tsmi_exit.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_exit.Size = New System.Drawing.Size(140, 22)
         Me.tsmi_exit.Text = "Exit"
         '
         'tsddbtn_advanced
@@ -173,10 +173,10 @@ Partial Class frm_Calculator
         'btn_divide
         '
         Me.btn_divide.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_divide.Location = New System.Drawing.Point(329, 266)
+        Me.btn_divide.Location = New System.Drawing.Point(329, 246)
         Me.btn_divide.Name = "btn_divide"
-        Me.btn_divide.Size = New System.Drawing.Size(94, 64)
-        Me.btn_divide.TabIndex = 22
+        Me.btn_divide.Size = New System.Drawing.Size(94, 54)
+        Me.btn_divide.TabIndex = 23
         Me.btn_divide.Text = "/"
         Me.btn_divide.UseVisualStyleBackColor = True
         '
@@ -186,7 +186,7 @@ Partial Class frm_Calculator
         Me.btn_seven.Location = New System.Drawing.Point(12, 266)
         Me.btn_seven.Name = "btn_seven"
         Me.btn_seven.Size = New System.Drawing.Size(94, 64)
-        Me.btn_seven.TabIndex = 19
+        Me.btn_seven.TabIndex = 20
         Me.btn_seven.Text = "7"
         Me.btn_seven.UseVisualStyleBackColor = True
         '
@@ -196,7 +196,7 @@ Partial Class frm_Calculator
         Me.btn_eight.Location = New System.Drawing.Point(112, 266)
         Me.btn_eight.Name = "btn_eight"
         Me.btn_eight.Size = New System.Drawing.Size(94, 64)
-        Me.btn_eight.TabIndex = 20
+        Me.btn_eight.TabIndex = 21
         Me.btn_eight.Text = "8"
         Me.btn_eight.UseVisualStyleBackColor = True
         '
@@ -206,7 +206,7 @@ Partial Class frm_Calculator
         Me.btn_nine.Location = New System.Drawing.Point(212, 266)
         Me.btn_nine.Name = "btn_nine"
         Me.btn_nine.Size = New System.Drawing.Size(94, 64)
-        Me.btn_nine.TabIndex = 21
+        Me.btn_nine.TabIndex = 22
         Me.btn_nine.Text = "9"
         Me.btn_nine.UseVisualStyleBackColor = True
         '
@@ -216,7 +216,7 @@ Partial Class frm_Calculator
         Me.btn_six.Location = New System.Drawing.Point(212, 336)
         Me.btn_six.Name = "btn_six"
         Me.btn_six.Size = New System.Drawing.Size(94, 64)
-        Me.btn_six.TabIndex = 18
+        Me.btn_six.TabIndex = 19
         Me.btn_six.Text = "6"
         Me.btn_six.UseVisualStyleBackColor = True
         '
@@ -226,7 +226,7 @@ Partial Class frm_Calculator
         Me.btn_five.Location = New System.Drawing.Point(112, 336)
         Me.btn_five.Name = "btn_five"
         Me.btn_five.Size = New System.Drawing.Size(94, 64)
-        Me.btn_five.TabIndex = 17
+        Me.btn_five.TabIndex = 18
         Me.btn_five.Text = "5"
         Me.btn_five.UseVisualStyleBackColor = True
         '
@@ -236,7 +236,7 @@ Partial Class frm_Calculator
         Me.btn_four.Location = New System.Drawing.Point(12, 336)
         Me.btn_four.Name = "btn_four"
         Me.btn_four.Size = New System.Drawing.Size(94, 64)
-        Me.btn_four.TabIndex = 16
+        Me.btn_four.TabIndex = 17
         Me.btn_four.Text = "4"
         Me.btn_four.UseVisualStyleBackColor = True
         '
@@ -246,7 +246,7 @@ Partial Class frm_Calculator
         Me.btn_three.Location = New System.Drawing.Point(212, 406)
         Me.btn_three.Name = "btn_three"
         Me.btn_three.Size = New System.Drawing.Size(94, 64)
-        Me.btn_three.TabIndex = 15
+        Me.btn_three.TabIndex = 16
         Me.btn_three.Text = "3"
         Me.btn_three.UseVisualStyleBackColor = True
         '
@@ -256,7 +256,7 @@ Partial Class frm_Calculator
         Me.btn_two.Location = New System.Drawing.Point(112, 406)
         Me.btn_two.Name = "btn_two"
         Me.btn_two.Size = New System.Drawing.Size(94, 64)
-        Me.btn_two.TabIndex = 14
+        Me.btn_two.TabIndex = 15
         Me.btn_two.Text = "2"
         Me.btn_two.UseVisualStyleBackColor = True
         '
@@ -266,17 +266,17 @@ Partial Class frm_Calculator
         Me.btn_one.Location = New System.Drawing.Point(12, 406)
         Me.btn_one.Name = "btn_one"
         Me.btn_one.Size = New System.Drawing.Size(94, 64)
-        Me.btn_one.TabIndex = 13
+        Me.btn_one.TabIndex = 14
         Me.btn_one.Text = "1"
         Me.btn_one.UseVisualStyleBackColor = True
         '
         'btn_equals
         '
         Me.btn_equals.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_equals.Location = New System.Drawing.Point(212, 475)
+        Me.btn_equals.Location = New System.Drawing.Point(329, 486)
         Me.btn_equals.Name = "btn_equals"
-        Me.btn_equals.Size = New System.Drawing.Size(94, 64)
-        Me.btn_equals.TabIndex = 26
+        Me.btn_equals.Size = New System.Drawing.Size(94, 54)
+        Me.btn_equals.TabIndex = 27
         Me.btn_equals.Text = "="
         Me.btn_equals.UseVisualStyleBackColor = True
         '
@@ -293,30 +293,30 @@ Partial Class frm_Calculator
         'btn_multiply
         '
         Me.btn_multiply.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_multiply.Location = New System.Drawing.Point(329, 336)
+        Me.btn_multiply.Location = New System.Drawing.Point(329, 306)
         Me.btn_multiply.Name = "btn_multiply"
-        Me.btn_multiply.Size = New System.Drawing.Size(94, 64)
-        Me.btn_multiply.TabIndex = 23
+        Me.btn_multiply.Size = New System.Drawing.Size(94, 54)
+        Me.btn_multiply.TabIndex = 24
         Me.btn_multiply.Text = "*"
         Me.btn_multiply.UseVisualStyleBackColor = True
         '
         'btn_minus
         '
         Me.btn_minus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_minus.Location = New System.Drawing.Point(329, 406)
+        Me.btn_minus.Location = New System.Drawing.Point(329, 366)
         Me.btn_minus.Name = "btn_minus"
-        Me.btn_minus.Size = New System.Drawing.Size(94, 64)
-        Me.btn_minus.TabIndex = 24
+        Me.btn_minus.Size = New System.Drawing.Size(94, 54)
+        Me.btn_minus.TabIndex = 25
         Me.btn_minus.Text = "-"
         Me.btn_minus.UseVisualStyleBackColor = True
         '
         'btn_plus
         '
         Me.btn_plus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_plus.Location = New System.Drawing.Point(329, 476)
+        Me.btn_plus.Location = New System.Drawing.Point(329, 426)
         Me.btn_plus.Name = "btn_plus"
-        Me.btn_plus.Size = New System.Drawing.Size(94, 64)
-        Me.btn_plus.TabIndex = 25
+        Me.btn_plus.Size = New System.Drawing.Size(94, 54)
+        Me.btn_plus.TabIndex = 26
         Me.btn_plus.Text = "+"
         Me.btn_plus.UseVisualStyleBackColor = True
         '
@@ -433,41 +433,52 @@ Partial Class frm_Calculator
         Me.btn_backspace.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_backspace.Location = New System.Drawing.Point(329, 126)
         Me.btn_backspace.Name = "btn_backspace"
-        Me.btn_backspace.Size = New System.Drawing.Size(94, 64)
-        Me.btn_backspace.TabIndex = 27
+        Me.btn_backspace.Size = New System.Drawing.Size(94, 54)
+        Me.btn_backspace.TabIndex = 28
         Me.btn_backspace.Text = "Delete"
         Me.btn_backspace.UseVisualStyleBackColor = True
         '
         'btn_clear
         '
-        Me.btn_clear.Location = New System.Drawing.Point(329, 196)
+        Me.btn_clear.Location = New System.Drawing.Point(329, 186)
         Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(94, 64)
-        Me.btn_clear.TabIndex = 28
+        Me.btn_clear.Size = New System.Drawing.Size(94, 54)
+        Me.btn_clear.TabIndex = 29
         Me.btn_clear.Text = "AC"
         Me.btn_clear.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lbl_formula
         '
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(410, 42)
-        Me.Label1.TabIndex = 35
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.lbl_formula.BackColor = System.Drawing.Color.White
+        Me.lbl_formula.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_formula.Location = New System.Drawing.Point(13, 30)
+        Me.lbl_formula.Name = "lbl_formula"
+        Me.lbl_formula.Size = New System.Drawing.Size(410, 42)
+        Me.lbl_formula.TabIndex = 35
+        Me.lbl_formula.TextAlign = System.Drawing.ContentAlignment.BottomRight
         '
         'sfd_History
         '
         Me.sfd_History.DefaultExt = "txt"
         Me.sfd_History.Filter = "Text Files (*.txt*)|*.txt"
         '
+        'btn_point
+        '
+        Me.btn_point.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_point.Location = New System.Drawing.Point(212, 476)
+        Me.btn_point.Name = "btn_point"
+        Me.btn_point.Size = New System.Drawing.Size(94, 64)
+        Me.btn_point.TabIndex = 13
+        Me.btn_point.Text = "."
+        Me.btn_point.UseVisualStyleBackColor = True
+        '
         'frm_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(435, 551)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn_point)
+        Me.Controls.Add(Me.lbl_formula)
         Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_backspace)
         Me.Controls.Add(Me.btn_inverseTan)
@@ -548,9 +559,10 @@ Partial Class frm_Calculator
     Friend WithEvents btn_backspace As Button
     Friend WithEvents btn_clear As Button
     Friend WithEvents tsmi_exit As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_formula As Label
     Friend WithEvents tsmi_openHistory As ToolStripMenuItem
     Friend WithEvents tsmi_saveHistory As ToolStripMenuItem
     Friend WithEvents tsmi_deleteHistory As ToolStripMenuItem
     Friend WithEvents sfd_History As SaveFileDialog
+    Friend WithEvents btn_point As Button
 End Class
