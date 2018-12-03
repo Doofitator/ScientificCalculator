@@ -22,19 +22,12 @@ Public Class frm_Calculator
     End Sub
 
     Private Sub tsmi_saveHistory_Click(sender As Object, e As EventArgs) Handles tsmi_saveHistory.Click
-        Dim x As List(Of String) = New List(Of String)
-        x.Add("x")
-        x.Add("y")
-        x.Add("z")
-        Dim y As String() = x.ToArray
-        Dim z As Specialized.StringCollection = New Specialized.StringCollection()
-        z.AddRange(y)
         If sfd_History.ShowDialog = Windows.Forms.DialogResult.OK Then
-            Using w As StreamWriter = File.AppendText(sfd_History.FileName)
-                For Each var As String In z
-                    w.WriteLine(var)
+            Using SaveFile As StreamWriter = File.AppendText(sfd_History.FileName)
+                For Each HistoryPoint As String In My.Settings.History
+                    SaveFile.WriteLine(HistoryPoint)
                 Next
-                w.Close()
+                SaveFile.Close()
             End Using
         End If
     End Sub
