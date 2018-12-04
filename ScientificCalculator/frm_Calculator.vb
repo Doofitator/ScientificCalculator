@@ -90,8 +90,28 @@ Public Class frm_Calculator
         My.Settings.Save()
     End Sub
 
-    Private Sub btn_Sine_Click(sender As Object, e As EventArgs) Handles btn_Sine.Click
-        lbl_formula.Text += "sin("
+    Private Sub btn_Sine_Click(sender As Object, e As EventArgs) Handles btn_Sine.Click, btn_Tan.Click, btn_Cos.Click
+        Dim trig As String = ""
+
+        If CType(sender, Button) Is btn_Sine Then
+            trig = "sin("
+        ElseIf CType(sender, button) Is btn_Cos Then
+            trig = "cos("
+        Else
+            trig = "tan("
+        End If
+
+        If deleteOnNextInput Then
+            lbl_formula.Text = ""
+            txt_result.Text = ""
+            deleteOnNextInput = False
+        End If
+
+        If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Then
+            lbl_formula.Text += trig & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
+        Else
+            lbl_formula.Text += trig
+        End If
     End Sub
 
     Private Sub tsbtn_deg_rad_Click(sender As Object, e As EventArgs) Handles tsbtn_deg_rad.Click
