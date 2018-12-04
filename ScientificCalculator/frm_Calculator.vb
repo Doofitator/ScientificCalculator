@@ -37,7 +37,13 @@ Public Class frm_Calculator
     End Sub
 
     Private Sub btn_number_Click(sender As Object, e As EventArgs) Handles btn_point.Click, btn_zero.Click, btn_one.Click, btn_two.Click, btn_three.Click, btn_four.Click, btn_five.Click, btn_six.Click, btn_seven.Click, btn_eight.Click, btn_nine.Click, btn_plus.Click, btn_minus.Click, btn_divide.Click, btn_multiply.Click
-        If Not deleteOnNextInput Then lbl_formula.Text += CType(sender, Button).Text Else lbl_formula.Text = "" : txt_result.Text = "" : lbl_formula.Text += CType(sender, Button).Text : deleteOnNextInput = False
+        If deleteOnNextInput Then
+            lbl_formula.Text = ""
+            txt_result.Text = ""
+            deleteOnNextInput = False
+        End If
+
+        lbl_formula.Text += CType(sender, Button).Text
     End Sub
 
     Private Sub btn_equals_Click(sender As Object, e As EventArgs) Handles btn_equals.Click
