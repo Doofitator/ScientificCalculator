@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Linq
+Imports org.mariuszgromada.math.mxparser
 
 Public Class frm_Calculator
 
@@ -36,27 +37,32 @@ Public Class frm_Calculator
         End If
     End Sub
 
-    Private Sub btn_number_Click(sender As Object, e As EventArgs) Handles btn_point.Click, btn_zero.Click, btn_one.Click, btn_two.Click, btn_three.Click, btn_four.Click, btn_five.Click, btn_six.Click, btn_seven.Click, btn_eight.Click, btn_nine.Click, btn_plus.Click, btn_minus.Click, btn_divide.Click, btn_multiply.Click
+    Private Sub btn_number_Click(sender As Object, e As EventArgs) Handles btn_point.Click, btn_zero.Click, btn_one.Click, btn_two.Click, btn_three.Click, btn_four.Click, btn_five.Click, btn_six.Click, btn_seven.Click, btn_eight.Click, btn_nine.Click, btn_plus.Click, btn_minus.Click, btn_divide.Click, btn_multiply.Click, btn_openBracket.Click, btn_closeBracket.Click
         If deleteOnNextInput Then
             lbl_formula.Text = ""
             txt_result.Text = ""
             deleteOnNextInput = False
         End If
 
-        lbl_formula.Text += CType(sender, Button).Text
+        If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Then
+            lbl_formula.Text += CType(sender, Button).Text & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
+        Else
+            lbl_formula.Text += CType(sender, Button).Text
+        End If
     End Sub
 
     Private Sub btn_equals_Click(sender As Object, e As EventArgs) Handles btn_equals.Click
         Dim equationString As String = lbl_formula.Text
-        Dim math As Decimal = New DataTable().Compute(equationString, Nothing)
-        txt_result.Text = math
+        Dim calculation As Expression = New Expression(lbl_formula.Text)
+        Dim Math As String = calculation.calculate()
+        txt_result.Text = Math
         'write to history
         Try
-            My.Settings.History.Add(equationString & "=" & math)
+            My.Settings.History.Add(equationString & "=" & Math)
             My.Settings.Save()
         Catch
             My.Settings.History = New Specialized.StringCollection()
-            My.Settings.History.Add(equationString & "=" & math)
+            My.Settings.History.Add(equationString & "=" & Math)
             My.Settings.Save()
         End Try
         deleteOnNextInput = True
@@ -68,7 +74,11 @@ Public Class frm_Calculator
     End Sub
 
     Private Sub btn_backspace_Click(sender As Object, e As EventArgs) Handles btn_backspace.Click
-        lbl_formula.Text = lbl_formula.Text.Substring(0, lbl_formula.Text.Length - 1)
+        Try
+            lbl_formula.Text = lbl_formula.Text.Substring(0, lbl_formula.Text.Length - 1)
+        Catch
+            'lbl already has nothing in it
+        End Try
     End Sub
 
     Private Sub tsmi_openHistory_Click(sender As Object, e As EventArgs) Handles tsmi_openHistory.Click
@@ -78,5 +88,28 @@ Public Class frm_Calculator
     Private Sub tsmi_deleteHistory_Click(sender As Object, e As EventArgs) Handles tsmi_deleteHistory.Click
         My.Settings.History.Clear()
         My.Settings.Save()
+    End Sub
+
+    Private Sub btn_Sine_Click(sender As Object, e As EventArgs) Handles btn_Sine.Click
+        lbl_formula.Text += "sin("
+    End Sub
+
+    Private Sub tsbtn_deg_rad_Click(sender As Object, e As EventArgs) Handles tsbtn_deg_rad.Click
+        If tsbtn_deg_rad.Text = "rad" Then
+            tsbtn_deg_rad.Text = "deg"
+            My.Settings.Radians = False
+        Else
+            tsbtn_deg_rad.Text = "rad"
+            My.Settings.Radians = True
+        End If
+        My.Settings.Save()
+    End Sub
+
+    Private Sub frm_Calculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.Radians Then
+            tsbtn_deg_rad.Text = "rad"
+        Else
+            tsbtn_deg_rad.Text = "deg"
+        End If
     End Sub
 End Class

@@ -68,6 +68,8 @@ Partial Class frm_Calculator
         Me.lbl_formula = New System.Windows.Forms.Label()
         Me.sfd_History = New System.Windows.Forms.SaveFileDialog()
         Me.btn_point = New System.Windows.Forms.Button()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbtn_deg_rad = New System.Windows.Forms.ToolStripButton()
         Me.stp_menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -84,7 +86,7 @@ Partial Class frm_Calculator
         '
         'stp_menuBar
         '
-        Me.stp_menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssddbtn_file, Me.tsddbtn_advanced})
+        Me.stp_menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tssddbtn_file, Me.tsddbtn_advanced, Me.ToolStripSeparator1, Me.tsbtn_deg_rad})
         Me.stp_menuBar.Location = New System.Drawing.Point(0, 0)
         Me.stp_menuBar.Name = "stp_menuBar"
         Me.stp_menuBar.Size = New System.Drawing.Size(435, 25)
@@ -105,35 +107,35 @@ Partial Class frm_Calculator
         '
         Me.tsmi_history.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_openHistory, Me.tsmi_saveHistory, Me.tsmi_deleteHistory})
         Me.tsmi_history.Name = "tsmi_history"
-        Me.tsmi_history.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_history.Size = New System.Drawing.Size(140, 22)
         Me.tsmi_history.Text = "History"
         '
         'tsmi_openHistory
         '
         Me.tsmi_openHistory.Name = "tsmi_openHistory"
         Me.tsmi_openHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.tsmi_openHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_openHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_openHistory.Text = "Open"
         '
         'tsmi_saveHistory
         '
         Me.tsmi_saveHistory.Name = "tsmi_saveHistory"
         Me.tsmi_saveHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.tsmi_saveHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_saveHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_saveHistory.Text = "Save as Text"
         '
         'tsmi_deleteHistory
         '
         Me.tsmi_deleteHistory.Name = "tsmi_deleteHistory"
         Me.tsmi_deleteHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(177, 22)
         Me.tsmi_deleteHistory.Text = "Delete"
         '
         'tsmi_exit
         '
         Me.tsmi_exit.Name = "tsmi_exit"
         Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
-        Me.tsmi_exit.Size = New System.Drawing.Size(180, 22)
+        Me.tsmi_exit.Size = New System.Drawing.Size(140, 22)
         Me.tsmi_exit.Text = "Exit"
         '
         'tsddbtn_advanced
@@ -472,6 +474,20 @@ Partial Class frm_Calculator
         Me.btn_point.Text = "."
         Me.btn_point.UseVisualStyleBackColor = True
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'tsbtn_deg_rad
+        '
+        Me.tsbtn_deg_rad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.tsbtn_deg_rad.Image = CType(resources.GetObject("tsbtn_deg_rad.Image"), System.Drawing.Image)
+        Me.tsbtn_deg_rad.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbtn_deg_rad.Name = "tsbtn_deg_rad"
+        Me.tsbtn_deg_rad.Size = New System.Drawing.Size(31, 22)
+        Me.tsbtn_deg_rad.Text = "Rad"
+        '
         'frm_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -565,4 +581,6 @@ Partial Class frm_Calculator
     Friend WithEvents tsmi_deleteHistory As ToolStripMenuItem
     Friend WithEvents sfd_History As SaveFileDialog
     Friend WithEvents btn_point As Button
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents tsbtn_deg_rad As ToolStripButton
 End Class
