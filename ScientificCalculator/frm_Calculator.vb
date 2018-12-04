@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Imports System.Linq
+Imports System.Text.RegularExpressions
 Imports org.mariuszgromada.math.mxparser
 
 Public Class frm_Calculator
@@ -44,16 +44,17 @@ Public Class frm_Calculator
             deleteOnNextInput = False
         End If
 
-        If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Then
-            lbl_formula.Text += CType(sender, Button).Text & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
-        Else
-            lbl_formula.Text += CType(sender, Button).Text
-        End If
+        'If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Or lbl_formula.Text.EndsWith("arcsin(") Or lbl_formula.Text.EndsWith("arccos(") Or lbl_formula.Text.EndsWith("arctan(") Then
+        'lbl_formula.Text += CType(sender, Button).Text & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
+        'Else
+        lbl_formula.Text += CType(sender, Button).Text
+        'End If
     End Sub
 
     Private Sub btn_equals_Click(sender As Object, e As EventArgs) Handles btn_equals.Click
         Dim equationString As String = lbl_formula.Text
-        Dim calculation As Expression = New Expression(lbl_formula.Text)
+        'Dim equationString As String = Regex.Replace(lbl_formula.text, "(sin|cos|tan)\(.?.?.?.?.?.?\)", "(sin|cos|tan) \ (.?.?.?.?.?.?*[" & Str_RadOrDec & "]\)")
+        Dim calculation As Expression = New Expression(equationString)
         Dim Math As String = calculation.calculate()
         txt_result.Text = Math
         'write to history
@@ -90,12 +91,12 @@ Public Class frm_Calculator
         My.Settings.Save()
     End Sub
 
-    Private Sub btn_Sine_Click(sender As Object, e As EventArgs) Handles btn_Sine.Click, btn_Tan.Click, btn_Cos.Click
+    Private Sub btn_SineCosTan_Click(sender As Object, e As EventArgs) Handles btn_Sine.Click, btn_Tan.Click, btn_Cos.Click
         Dim trig As String = ""
 
         If CType(sender, Button) Is btn_Sine Then
             trig = "sin("
-        ElseIf CType(sender, button) Is btn_Cos Then
+        ElseIf CType(sender, Button) Is btn_Cos Then
             trig = "cos("
         Else
             trig = "tan("
@@ -107,11 +108,11 @@ Public Class frm_Calculator
             deleteOnNextInput = False
         End If
 
-        If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Then
-            lbl_formula.Text += trig & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
-        Else
-            lbl_formula.Text += trig
-        End If
+        'If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Or lbl_formula.Text.EndsWith("arcsin(") Or lbl_formula.Text.EndsWith("arccos(") Or lbl_formula.Text.EndsWith("arctan(") Then
+        'lbl_formula.Text += trig & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
+        'Else
+        lbl_formula.Text += trig
+        'End If
     End Sub
 
     Private Sub tsbtn_deg_rad_Click(sender As Object, e As EventArgs) Handles tsbtn_deg_rad.Click
@@ -131,5 +132,29 @@ Public Class frm_Calculator
         Else
             tsbtn_deg_rad.Text = "deg"
         End If
+    End Sub
+
+    Private Sub btn_inverseSineCosTan_Click(sender As Object, e As EventArgs) Handles btn_inverseSine.Click, btn_inverseCos.Click, btn_inverseTan.Click
+        Dim trig As String = ""
+
+        If CType(sender, Button) Is btn_inverseSine Then
+            trig = "arcsin("
+        ElseIf CType(sender, Button) Is btn_inverseCos Then
+            trig = "arccos("
+        Else
+            trig = "arctan("
+        End If
+
+        If deleteOnNextInput Then
+            lbl_formula.Text = ""
+            txt_result.Text = ""
+            deleteOnNextInput = False
+        End If
+
+        'If lbl_formula.Text.EndsWith("sin(") Or lbl_formula.Text.EndsWith("cos(") Or lbl_formula.Text.EndsWith("tan(") Or lbl_formula.Text.EndsWith("arcsin(") Or lbl_formula.Text.EndsWith("arccos(") Or lbl_formula.Text.EndsWith("arctan(") Then
+        ' lbl_formula.Text += trig & "*[" & tsbtn_deg_rad.Text & "]" 'could change to happen in btn_equals.click with find and replace?
+        ' Else
+        lbl_formula.Text += trig
+        ' End If
     End Sub
 End Class

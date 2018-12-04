@@ -36,6 +36,8 @@ Partial Class frm_Calculator
         Me.tsmi_F2C = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmi_ohms = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmi_std = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbtn_deg_rad = New System.Windows.Forms.ToolStripButton()
         Me.btn_divide = New System.Windows.Forms.Button()
         Me.btn_seven = New System.Windows.Forms.Button()
         Me.btn_eight = New System.Windows.Forms.Button()
@@ -68,8 +70,6 @@ Partial Class frm_Calculator
         Me.lbl_formula = New System.Windows.Forms.Label()
         Me.sfd_History = New System.Windows.Forms.SaveFileDialog()
         Me.btn_point = New System.Windows.Forms.Button()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsbtn_deg_rad = New System.Windows.Forms.ToolStripButton()
         Me.stp_menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -171,6 +171,20 @@ Partial Class frm_Calculator
         Me.tsmi_std.Name = "tsmi_std"
         Me.tsmi_std.Size = New System.Drawing.Size(186, 22)
         Me.tsmi_std.Text = "Speed, time & distance"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'tsbtn_deg_rad
+        '
+        Me.tsbtn_deg_rad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.tsbtn_deg_rad.Image = CType(resources.GetObject("tsbtn_deg_rad.Image"), System.Drawing.Image)
+        Me.tsbtn_deg_rad.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbtn_deg_rad.Name = "tsbtn_deg_rad"
+        Me.tsbtn_deg_rad.Size = New System.Drawing.Size(31, 22)
+        Me.tsbtn_deg_rad.Text = "Rad"
         '
         'btn_divide
         '
@@ -473,20 +487,6 @@ Partial Class frm_Calculator
         Me.btn_point.TabIndex = 13
         Me.btn_point.Text = "."
         Me.btn_point.UseVisualStyleBackColor = True
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'tsbtn_deg_rad
-        '
-        Me.tsbtn_deg_rad.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.tsbtn_deg_rad.Image = CType(resources.GetObject("tsbtn_deg_rad.Image"), System.Drawing.Image)
-        Me.tsbtn_deg_rad.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbtn_deg_rad.Name = "tsbtn_deg_rad"
-        Me.tsbtn_deg_rad.Size = New System.Drawing.Size(31, 22)
-        Me.tsbtn_deg_rad.Text = "Rad"
         '
         'frm_Calculator
         '
