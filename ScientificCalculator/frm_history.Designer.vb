@@ -29,6 +29,7 @@ Partial Class frm_history
         '
         'txt_history
         '
+        Me.txt_history.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_history.Location = New System.Drawing.Point(13, 13)
         Me.txt_history.Multiline = True
         Me.txt_history.Name = "txt_history"

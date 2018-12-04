@@ -2,6 +2,9 @@
 Imports System.Linq
 
 Public Class frm_Calculator
+
+    Dim deleteOnNextInput As Boolean = False
+
     Private Sub tsmi_exit_Click(sender As Object, e As EventArgs) Handles tsmi_exit.Click
         Me.Close()
     End Sub
@@ -34,7 +37,7 @@ Public Class frm_Calculator
     End Sub
 
     Private Sub btn_number_Click(sender As Object, e As EventArgs) Handles btn_point.Click, btn_zero.Click, btn_one.Click, btn_two.Click, btn_three.Click, btn_four.Click, btn_five.Click, btn_six.Click, btn_seven.Click, btn_eight.Click, btn_nine.Click, btn_plus.Click, btn_minus.Click, btn_divide.Click, btn_multiply.Click
-        lbl_formula.Text += CType(sender, Button).Text
+        If Not deleteOnNextInput Then lbl_formula.Text += CType(sender, Button).Text Else lbl_formula.Text = "" : txt_result.Text = "" : lbl_formula.Text += CType(sender, Button).Text : deleteOnNextInput = False
     End Sub
 
     Private Sub btn_equals_Click(sender As Object, e As EventArgs) Handles btn_equals.Click
@@ -50,6 +53,7 @@ Public Class frm_Calculator
             My.Settings.History.Add(equationString & "=" & math)
             My.Settings.Save()
         End Try
+        deleteOnNextInput = True
     End Sub
 
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
