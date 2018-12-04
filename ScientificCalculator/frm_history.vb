@@ -18,8 +18,12 @@
 
     Function writeHistory()
         txt_history.Text = ""
-        For Each line As String In My.Settings.History
-            txt_history.Text += line & vbCrLf
-        Next
+        Try
+            For Each line As String In My.Settings.History
+                txt_history.Text += line & vbCrLf
+            Next
+        Catch
+            txt_history.Text = "No history yet."
+        End Try
     End Function
 End Class
