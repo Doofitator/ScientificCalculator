@@ -52,8 +52,7 @@ Public Class frm_Calculator
     End Sub
 
     Private Sub btn_equals_Click(sender As Object, e As EventArgs) Handles btn_equals.Click
-        Dim equationString As String = lbl_formula.Text
-        'Dim equationString As String = Regex.Replace(lbl_formula.text, "(sin|cos|tan)\(.?.?.?.?.?.?\)", "(sin|cos|tan) \ (.?.?.?.?.?.?*[" & Str_RadOrDec & "]\)")
+        Dim equationString As String = Regex.Replace(lbl_formula.Text, "(sin|cos|tan)(\(.?.?.?.?.?.?)(\))", "$1$2" + "*[" & tsbtn_deg_rad.Text & "]$3")
         Dim calculation As Expression = New Expression(equationString)
         Dim Math As String = calculation.calculate()
         txt_result.Text = Math
