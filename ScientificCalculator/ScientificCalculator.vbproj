@@ -85,6 +85,12 @@
     <Compile Include="frm_F2C.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_history.Designer.vb">
+      <DependentUpon>frm_history.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_history.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_Ohms.Designer.vb">
       <DependentUpon>frm_Ohms.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_F2C.resx">
       <DependentUpon>frm_F2C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_history.resx">
+      <DependentUpon>frm_history.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Ohms.resx">
       <DependentUpon>frm_Ohms.vb</DependentUpon>

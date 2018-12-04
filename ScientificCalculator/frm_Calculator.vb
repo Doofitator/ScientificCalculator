@@ -42,8 +42,14 @@ Public Class frm_Calculator
         Dim math As Decimal = New DataTable().Compute(equationString, Nothing)
         txt_result.Text = math
         'write to history
-        My.Settings.History.Add(equationString & "=" & math)
-        My.Settings.Save()
+        Try
+            My.Settings.History.Add(equationString & "=" & math)
+            My.Settings.Save()
+        Catch
+            My.Settings.History = New Specialized.StringCollection()
+            My.Settings.History.Add(equationString & "=" & math)
+            My.Settings.Save()
+        End Try
     End Sub
 
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
@@ -53,5 +59,14 @@ Public Class frm_Calculator
 
     Private Sub btn_backspace_Click(sender As Object, e As EventArgs) Handles btn_backspace.Click
         lbl_formula.Text = lbl_formula.Text.Substring(0, lbl_formula.Text.Length - 1)
+    End Sub
+
+    Private Sub tsmi_openHistory_Click(sender As Object, e As EventArgs) Handles tsmi_openHistory.Click
+        frm_history.Show()
+    End Sub
+
+    Private Sub tsmi_deleteHistory_Click(sender As Object, e As EventArgs) Handles tsmi_deleteHistory.Click
+        My.Settings.History.Clear()
+        My.Settings.Save()
     End Sub
 End Class

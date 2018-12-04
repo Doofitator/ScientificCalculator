@@ -105,35 +105,35 @@ Partial Class frm_Calculator
         '
         Me.tsmi_history.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_openHistory, Me.tsmi_saveHistory, Me.tsmi_deleteHistory})
         Me.tsmi_history.Name = "tsmi_history"
-        Me.tsmi_history.Size = New System.Drawing.Size(140, 22)
+        Me.tsmi_history.Size = New System.Drawing.Size(180, 22)
         Me.tsmi_history.Text = "History"
         '
         'tsmi_openHistory
         '
         Me.tsmi_openHistory.Name = "tsmi_openHistory"
         Me.tsmi_openHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.tsmi_openHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_openHistory.Size = New System.Drawing.Size(180, 22)
         Me.tsmi_openHistory.Text = "Open"
         '
         'tsmi_saveHistory
         '
         Me.tsmi_saveHistory.Name = "tsmi_saveHistory"
         Me.tsmi_saveHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.tsmi_saveHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_saveHistory.Size = New System.Drawing.Size(180, 22)
         Me.tsmi_saveHistory.Text = "Save as Text"
         '
         'tsmi_deleteHistory
         '
         Me.tsmi_deleteHistory.Name = "tsmi_deleteHistory"
         Me.tsmi_deleteHistory.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(177, 22)
+        Me.tsmi_deleteHistory.Size = New System.Drawing.Size(180, 22)
         Me.tsmi_deleteHistory.Text = "Delete"
         '
         'tsmi_exit
         '
         Me.tsmi_exit.Name = "tsmi_exit"
         Me.tsmi_exit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F14), System.Windows.Forms.Keys)
-        Me.tsmi_exit.Size = New System.Drawing.Size(140, 22)
+        Me.tsmi_exit.Size = New System.Drawing.Size(180, 22)
         Me.tsmi_exit.Text = "Exit"
         '
         'tsddbtn_advanced
