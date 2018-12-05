@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_history
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,9 @@ Partial Class frm_history
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.txt_history = New System.Windows.Forms.TextBox()
-        Me.tmr_loader = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'txt_history
@@ -33,12 +31,10 @@ Partial Class frm_history
         Me.txt_history.Location = New System.Drawing.Point(13, 13)
         Me.txt_history.Multiline = True
         Me.txt_history.Name = "txt_history"
+        Me.txt_history.ReadOnly = True
         Me.txt_history.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txt_history.Size = New System.Drawing.Size(489, 578)
         Me.txt_history.TabIndex = 0
-        '
-        'tmr_loader
-        '
         '
         'frm_history
         '
@@ -54,5 +50,4 @@ Partial Class frm_history
     End Sub
 
     Private WithEvents txt_history As TextBox
-    Friend WithEvents tmr_loader As Timer
 End Class

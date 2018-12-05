@@ -66,6 +66,8 @@ Public Class frm_Calculator
             My.Settings.Save()
         End Try
         deleteOnNextInput = True
+
+        frm_history.writeHistory()
     End Sub
 
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
@@ -156,4 +158,37 @@ Public Class frm_Calculator
         lbl_formula.Text += trig
         ' End If
     End Sub
+
+    Private Sub btn_x_Click(sender As Object, e As EventArgs) Handles btn_toThePowerOf.Click, btn_root.Click, btn_square.Click, btn_squareRoot.Click
+        Dim btn As Button = CType(sender, Button)
+        Dim strText As String
+        If btn Is btn_toThePowerOf Then
+            strText = "^"
+        ElseIf btn Is btn_root Then
+retry:
+            Dim rootNum As String = InputBox("What root? ", "x root", "3")
+            If IsValid(rootNum) Then
+                strText = "^(1/" & rootNum & ")"
+            Else
+                GoTo retry
+            End If
+        ElseIf btn Is btn_square Then
+            strText = "^2"
+        ElseIf btn Is btn_squareRoot Then
+            strText = "sqrt("
+        End If
+
+        If deleteOnNextInput Then
+            lbl_formula.Text = ""
+            txt_result.Text = ""
+            deleteOnNextInput = False
+        End If
+
+        lbl_formula.Text += strText
+    End Sub
+
+    Function IsValid(ByVal inputString As String) As Boolean
+        Dim validValues As New Regex("^[1-9]?[0-9]{1}$|^100$")
+        Return validValues.IsMatch(inputString)
+    End Function
 End Class

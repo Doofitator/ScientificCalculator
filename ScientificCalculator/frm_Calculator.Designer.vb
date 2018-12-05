@@ -75,11 +75,13 @@ Partial Class frm_Calculator
         '
         'txt_result
         '
+        Me.txt_result.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.txt_result.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_result.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_result.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_result.Location = New System.Drawing.Point(12, 72)
         Me.txt_result.Multiline = True
         Me.txt_result.Name = "txt_result"
+        Me.txt_result.ReadOnly = True
         Me.txt_result.Size = New System.Drawing.Size(411, 46)
         Me.txt_result.TabIndex = 30
         Me.txt_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -492,7 +494,7 @@ Partial Class frm_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(435, 551)
+        Me.ClientSize = New System.Drawing.Size(435, 547)
         Me.Controls.Add(Me.btn_point)
         Me.Controls.Add(Me.lbl_formula)
         Me.Controls.Add(Me.btn_clear)

@@ -9,18 +9,15 @@
         Me.Height = frm_Calculator.Height
         Me.Top = frm_Calculator.Top
         writeHistory()
-        tmr_loader.Enabled = True
+
     End Sub
     Private Declare Function GetActiveWindow Lib "user32" Alias "GetActiveWindow" () As IntPtr
-    Private Sub tmr_loader_Tick(sender As Object, e As EventArgs) Handles tmr_loader.Tick
-        If Not GetActiveWindow = Me.Handle Then writeHistory()
-    End Sub
 
     Function writeHistory()
         txt_history.Text = ""
         Try
             For Each line As String In My.Settings.History
-                txt_history.Text += line & vbCrLf
+                txt_history.AppendText(line & vbCrLf)
             Next
         Catch
             txt_history.Text = "No history yet."
