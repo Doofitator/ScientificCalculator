@@ -49,5 +49,5 @@ Partial Class frm_history
 
     End Sub
 
-    Private WithEvents txt_history As TextBox
+    Public WithEvents txt_history As TextBox
 End Class

@@ -89,6 +89,7 @@ Public Class frm_Calculator
 
     Private Sub tsmi_deleteHistory_Click(sender As Object, e As EventArgs) Handles tsmi_deleteHistory.Click
         My.Settings.History.Clear()
+        frm_history.txt_history.Text = ""
         My.Settings.Save()
     End Sub
 
