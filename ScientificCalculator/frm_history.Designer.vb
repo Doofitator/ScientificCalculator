@@ -43,7 +43,7 @@ Partial Class frm_history
         Me.ClientSize = New System.Drawing.Size(514, 603)
         Me.Controls.Add(Me.txt_history)
         Me.Name = "frm_history"
-        Me.Text = "frm_history"
+        Me.Text = "Calculator History"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
